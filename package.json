@@ -1,0 +1,22 @@
+{
+  "name": "weatherproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node weatherSiteServer.mjs",
+    "devStart": "nodemon weatherSiteServer.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-rate-limit": "^6.5.1",
+    "nunjucks": "^3.2.3"
+  },
+  "devDependencies": {
+    "dotenv": "^15.0.1",
+    "node-fetch": "^3.2.10",
+    "nodemon": "^2.0.19"
+  }
+}

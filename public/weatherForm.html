@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Leaflet stuff-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <!--Leaflet stuff-->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Abril+Fatface&family=Abril+Fatface&family=Caveat&display=swap"
+        rel="stylesheet">
+    <!-- Google Fonts -->
+
+    <!--Styling-->
+    <link rel="stylesheet" href="weatherStyle.css">
+    <!--Styling-->
+</head>
+
+<body>
+    <header>
+        <h1>Weather App Fun!</h1>
+    </header>
+    <h2>Manually enter or plot a point on the map to get the current weather!</h2>
+    <form id="wForm">
+        <label for="latitude">city coordinates :</label>
+        <input name="inputLatitude" required="required" id="latitude" type="text" placeholder="latitude">
+
+        <button id="submitButton" type="submit">Search</button>
+        <input name="inputLongitude" required="required" id="longitude" type="text" placeholder="longitude">
+    </form>
+
+    <div id="map"></div>
+    <div id="errorPopUpContainer">
+        <div id="errorPopUp">
+            <p id="clearButton">X</p>
+            <img alt="error image" src="./images/errorIcon5.png">
+            <p>Error, try again !</p>
+        </div>
+    </div>
+    <script src="weatherForm.js"></script>
+</body>
+<footer>
+    <p>Copyright &copy 2022</p>
+    <p><strong>Credits: </strong><a href="https://www.flaticon.com/free-icons/error" title="error icons">Error icons
+            created by Freepik-Flaticon</a></p>
+</footer>
+
+</html>
