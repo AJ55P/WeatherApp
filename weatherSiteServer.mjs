@@ -15,8 +15,8 @@ const WEATHER_API_KEY = process.env.OPEN_WEATHER_API_KEY;
 const dir = path.dirname(fileURLToPath(import.meta.url));
 
 const normalUseApiLimiter = rateLimit({
-    windowMs: 60 * 60 * 1000, // 7 requests per hour !
-    max: 7,
+    windowMs: 60 * 60 * 1000, // Limits requests per hour !
+    max: 30, // Global Limit of 30 requests per hour!
     standardHeaders: true,
     legacyHeaders: false,
     message: JSON.stringify({msg: 'Too many requests, please try again later.'}),
@@ -27,11 +27,11 @@ nunjucks.configure('templates',{
     express: app
 });
 
-
-app.use(function (req, res, next) {
-    console.log(`A request for ${req.path}, to my Weather app and the time is: `, new Date().toString());
-    next();
-});
+// Development Logging!
+// app.use(function (req, res, next) {
+//     console.log(`A request for ${req.path}, to my Weather app and the time is: `, new Date().toString());
+//     next();
+// });
 
 // middleware for static resources
 app.use(express.static('public',{index : "false"}));
